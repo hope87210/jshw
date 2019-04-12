@@ -1,0 +1,48 @@
+.content-area {
+	background-color: #FFF;
+	padding-bottom: 40px;
+	padding-top: 20px;
+}
+
+@media screen and (min-width: 767px) {
+	.content-area {
+		padding-top: 40px;
+	}
+}
+
+@media screen and (min-width: 1023px) {
+	.main-area {
+		padding-right: 40px;
+	}
+}
+
+
+.sidebar {
+	color: #999;
+	font-size: 85%;
+}
+
+.sidebar h3 {
+	font-size: 138.5%;
+	margin-bottom: 7px;
+}
+
+.info-box {
+	background-color: #efeedb;
+	border: 5px solid #e6e5c2;
+	padding: 20px 40px 7px 40px;
+	margin-bottom: 1em;
+}
+
+.box-a {
+	background-color: #e7eff5;
+	padding: 20px 20px 0 20px;
+	border: 2px solid #d3dee7;
+	margin-bottom: 15px;
+}
+
+@media screen and (min-width: 767px) {
+	.box-a {
+		margin-bottom: 30px;
+	}
+}

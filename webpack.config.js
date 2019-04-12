@@ -20,10 +20,18 @@ module.exports = {
             }
         },
         {
-                use: ExtractTextPlugin.extract({
-                use:'css-loader'
+            test:/\.css$/,
+            use: ExtractTextPlugin.extract({
+                use:[{
+                    loader: 'css-loader',
+                    options:{
+                        url: false
+                    }
+                },{
+                    loader: 'postcss-loader'
+                }]
             }),
-            test:/\.css$/
+
         },
         {
             test: /\.(jpe?g|png|gif|svg)$/,

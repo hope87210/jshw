@@ -1,4 +1,5 @@
 let path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './assets/js/script.js',
@@ -7,7 +8,8 @@ module.exports = {
         filename: 'bundle.js',
     },
     module:{
-        rules:[{
+        rules:[
+        {
             test: /\.(js)$/,
             use: {
                 loader:'babel-loader',
@@ -15,6 +17,12 @@ module.exports = {
                     presets:['@babel/preset-env']
                 }
             }
+        },
+        {
+                use: ExtractTextPlugin.extract({
+                use:'css-loader'
+            }),
+            test:/\.css$/
         },
         {
             test: /\.(jpe?g|png|gif|svg)$/,
@@ -28,7 +36,20 @@ module.exports = {
                 },
                 'image-webpack-loader'
             ]
+        },
+        {
+            test:/\.(png|woff|woff2|eot|ttf|svg)$/,
+            use:{
+                loader: 'file-loader',
+                options:{
+                    outputPath:'css/fonts',
+                    name: '[name].[ext]',
+                },
+            }
         }
     ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('./css/style.css')
+    ]
 }

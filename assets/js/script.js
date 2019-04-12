@@ -24,8 +24,8 @@ import "../css/fonts/PT-Sans.ttf";
 import "../css/fonts/PT-Sans.woff";
 
 
-$('#image__bird').attr("src",bird);
-$('#image__squirrel').attr("src",squirrel);
+$('#bird').attr("src",bird);
+$('#squirrel').attr("src",squirrel);
 
 $(document).ready(function () {
 	// when a hanburger menu is clicked
